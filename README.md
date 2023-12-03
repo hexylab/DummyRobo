@@ -1,6 +1,8 @@
 # DummyRobo
 ## Desctiption
-3D Printed AI Robot Arm  
+This is the code to make a robot (EEZYbotARM) printed by a 3D printer work using M5Stack.
+By connecting M5Stack to ROS, you can simulate the robot's behavior on ROS's Rvis.
+
 dummy_robo : ROS based robot controller for DummyRobo  
 dummyRC : M5stack program for DummyRobo's servo controll  
 
