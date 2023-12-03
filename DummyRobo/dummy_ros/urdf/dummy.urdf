@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<robot name="dummy">
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+	<mesh filename="package://dummy_ros/meshes/base.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0 0 0.049" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="link_1" />
+    <axis xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-1.4" upper="1.4"/>
+      <!--   [-80,80]-->
+  </joint>
+
+  <link name="link_1">
+    <visual>
+      <origin xyz="0 0 -0.049" rpy="0 0 0" />
+      <geometry>
+	<mesh filename="package://dummy_ros/meshes/rotaly.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="red" />
+    </visual>
+  </link>
+
+  <joint name="joint_2" type="revolute">
+    <origin xyz="0 0 0.017" rpy="0 0 0" />
+    <parent link="link_1" />
+    <child link="link_2" />
+    <axis xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-1.4" upper="1.4"/>
+      <!--   [-35,55]-->
+  </joint>
+
+  <link name="link_2">
+    <visual>
+      <origin xyz="0 0 -0.066" rpy="0 0 0" />
+      <geometry>
+	<mesh filename="package://dummy_ros/meshes/mainarm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="blue" />
+    </visual>
+  </link>
+
+  <joint name="joint_3" type="revolute">
+    <origin xyz="0 0 0.08" rpy="0 0 0" />
+    <parent link="link_2" />
+    <child link="link_3" />
+    <axis xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-1.4" upper="1.4"/>
+      <!--   [-70,20]-->
+  </joint>
+
+  <link name="link_3">
+    <visual>
+      <origin xyz="-0.035 0 -0.146" rpy="0 0 0" />
+      <geometry>
+	<mesh filename="package://dummy_ros/meshes/horarm.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="red" />
+    </visual>
+  </link>
+
+  <joint name="joint_4" type="revolute">
+    <origin xyz="0.08 0 0" rpy="0 0 0" />
+    <parent link="link_3" />
+    <child link="link_4" />
+    <axis xyz="0 1 0" />
+    <limit
+      effort="0"
+      velocity="0"
+      lower="-1.4" upper="1.4"/>
+      <!--   [-45,70]-->
+  </joint>
+
+  <link name="link_4">
+    <visual>
+      <origin xyz="-0.115 0 -0.146" rpy="0 0 0" />
+      <geometry>
+	<mesh filename="package://dummy_ros/meshes/hand.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="blue" />
+    </visual>
+  </link>
+
+  <material name="red">
+    <color rgba="1 0 0 1"/>
+  </material>
+  
+  <material name="blue">
+    <color rgba="0 0 1 1"/>
+  </material>
+
+</robot>
